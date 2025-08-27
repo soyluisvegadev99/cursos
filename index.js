@@ -219,12 +219,22 @@ class Jugador extends Persona{
     constructor(nombre,edad,nacionalidad){
         super(nombre,edad);
         this.nacionalidad = nacionalidad;
+        this.posicion = null;
+    }
+    get getPosicion(){
+        return this.posicion;
+    }
+    set setPosicion(posicion){
+        this.posicion = posicion;
     }
     saludar(){
         console.log("Meto muchos goles");
     }
     patear(){
         console.log("Gol")
+    }
+    static queEres(){
+        console.log("Soy un jugador de futbol")
     }
 }
 
@@ -234,3 +244,113 @@ console.log(Luis)
 Luis.saludar()
 Luis.patear()
 
+Jugador.queEres()
+
+//Console
+
+console.log(window);
+console.log(document)
+console.dir(window)
+console.dir(document)
+console.clear()
+console.group("cursos de luis")
+console.log("curso de java")
+console.log("Curso de node")
+
+console.clear()
+console.table(Object.entries(console))
+
+console.time("Inicio")
+
+const arreglo = Array(100000000)
+for(let i = 0; i< Array.length; i ++){
+    arreglo[i] = i;
+}
+console.timeEnd("Inicio")
+console.clear()
+
+for(let i = 0; i< 100;i++){
+    console.count("codigo for")
+    console.log(i)
+}
+
+console.clear()
+
+let x = 1, y= 2, pruebaXY = "Se espera que X sea menor que Y"
+
+console.assert(x<y,{x,y,pruebaXY})
+
+//Date
+
+let fecha = new Date()
+console.log(fecha.getDate())
+console.log(fecha.getFullYear())
+console.log(fecha.toString())
+console.log(fecha.toDateString())
+console.log(fecha.toLocaleString())
+console.log(fecha.toLocaleTimeString());
+
+let cumpleLuis = new Date(1999,0,10)
+console.log(cumpleLuis)
+
+
+//Math
+
+console.log(Math)
+console.log(Math.abs(-10))
+console.log(Math.ceil(7.2))
+console.log(Math.floor(7.8))
+console.log(Math.round(7.5))
+console.log(Math.sqrt(4))
+console.log(Math.pow(2,5))
+console.log(Math.random())
+console.log(Math.round(Math.random()*1000))
+
+//Operador corto circuito
+//Con OR
+
+function saludar(nombre ){
+    nombre = nombre || "Desconocido"
+    console.log(`Hola ${nombre}`)
+}
+saludar("Luis")
+saludar()
+console.log()
+
+//Con AND
+console.log(false && "Valor de la derecha")
+console.log(true && "Valor de la derecha")
+
+
+//Alert,confirm,prompt
+//alert("Esto es una alerta")
+//confirm("Esto es una confirmación")
+//prompt("Hola esto es un prompt")
+
+/*alerta = alert("Esto es una alerta")
+confirm = confirm("Esto es una confirmación")
+aviso = prompt("Hola esto es un prompt")
+
+console.log(alerta)
+console.log(confirm)
+console.log(aviso)*/
+
+//Expresiones regulares
+let cadena = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam,error ealias ver
+Expedita, iure? Reprehenderit delectus cum soluta vel amet, fugit tempore quidem cligendi quam? Maiores nam deserunt dolore. Ex, atque itaque inventore eligendi consequuntur accusamus ducimus odit. Minima doloribus laudantium quod temporibus tenetur.
+Repudiandae, sequi sint accusamus delectus error impedit ducimus aspernatur optio ulpa nostrum explicabo accusamus in numquam officiis, autem consequuntur eum cumque a sunt hic sequi ipsam ea? Asperiores, cupiditate?
+Dolorum non veniam animi laudantium, praesentium culpa, consequuntur cum rem modi aut  deleniti? Blanditiis, tempore distinctio, quaerat pariatur repellat rem, saepe suscipit cum enim quasi facere sapiente vel expedita.
+Dolorem cupiditate iure blanditiis voluptate enim eligendi ipsa velit obcaecati, labore reiciendis provident beatae veritatis laborum dolor officia itaque at, eos commodi nihil consequatur. Ratione quas in suscipit neque dolores`
+
+let expReg = new RegExp("lorem","ig");
+
+console.log(expReg.test(cadena))
+console.log(expReg.exec(cadena))
+
+let expReg2 = /lorem{1}/ig;
+console.log(expReg2.test(cadena))
+console.log(expReg2.exec(cadena))
+
+console.clear()
+
+//funciones anonimas autoejecutables
